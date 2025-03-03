@@ -8,11 +8,13 @@ import io
 def add_formatted_paragraph(doc, text):
     paragraph = doc.add_paragraph()
     run = paragraph.add_run(text)
+    # Set text to bold
     run.bold = True
-    highlight = run.font._element
-    highlight_props = OxmlElement("w:highlight")
-    highlight_props.set(qn("w:val"), "yellow")
-    run.font._element.append(highlight_props)
+
+    # highlight text
+    highlight_element = OxmlElement("w:highlight")
+    highlight_element.set(qn("w:val"), "yellow")  # You can change "yellow" to other highlight colors
+    run.font._element.append(highlight_element)
 
 # Function to process input text and generate a Word document
 def process_text(input_text):
