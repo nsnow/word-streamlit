@@ -32,7 +32,7 @@ st.write("Upload a Word or text file. Lines starting with an asterisk (*) will b
 
 # File upload
 uploaded_file = st.file_uploader("Upload your file", type=["txt", "docx"])
-filename, ext = uploaded_file.name.split('.')
+filename, ext = str(uploaded_file.name).split('.')
 
 if uploaded_file:
     if uploaded_file.name.endswith(".txt"):
