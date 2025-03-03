@@ -52,7 +52,7 @@ if uploaded_file:
         formatted_doc.save(output)
         output.seek(0)
         # Provide a download link
-        st.download_button(label="Download Formatted Word File", data=output, file_name=f'{uploaded_file.name}_formatted.docx", mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+        st.download_button(label="Download Formatted Word File", data=output, file_name=f"{uploaded_file.name}_formatted.docx", mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
 
         st.experimental_rerun()
     else:
