@@ -32,6 +32,7 @@ st.write("Upload a Word or text file. Lines starting with an asterisk (*) will b
 
 # File upload
 uploaded_file = st.file_uploader("Upload your file", type=["txt", "docx"])
+filename, ext = uploaded_file.name.split('.')
 
 if uploaded_file:
     if uploaded_file.name.endswith(".txt"):
@@ -52,9 +53,7 @@ if uploaded_file:
         formatted_doc.save(output)
         output.seek(0)
         # Provide a download link
-        st.download_button(label="Download Formatted Word File", data=output, file_name=f"{uploaded_file.name}_formatted.docx", mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-
-        st.experimental_rerun()
+        st.download_button(label="Download Formatted Word File", data=output, file_name="{filename}_formatted.docx", mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
     else:
         st.warning("The uploaded file is empty. Please try again.")
 
