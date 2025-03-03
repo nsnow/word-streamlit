@@ -12,7 +12,7 @@ def add_formatted_paragraph(doc, text):
     highlight = run.font._element
     highlight_props = OxmlElement("w:highlight")
     highlight_props.set(qn("w:val"), "yellow")
-    highlight.append(highlight_props)
+    run.font._element.append(highlight_element)
 
 # Function to process input text and generate a Word document
 def process_text(input_text):
