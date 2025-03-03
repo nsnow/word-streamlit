@@ -11,10 +11,9 @@ def add_formatted_paragraph(doc, text):
     # Set text to bold
     run.bold = True
 
-    # highlight text
-    highlight_element = OxmlElement("w:highlight")
-    highlight_element.set(qn("w:val"), "yellow")  # You can change "yellow" to other highlight colors
-    run.font._element.append(highlight_element)
+    # highlight text, code from Gemini
+    font = run.font
+    font.highlight_color = WD_COLOR_INDEX.YELLOW
 
 # Function to process input text and generate a Word document
 def process_text(input_text):
