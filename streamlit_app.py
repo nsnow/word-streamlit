@@ -2,6 +2,7 @@ import streamlit as st
 from docx import Document
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
+from docx.enum.text import WD_COLOR_INDEX
 import io
 
 # Function to add text with formatting to Word
